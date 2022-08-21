@@ -1,7 +1,7 @@
 :root{
---navbarBG: #18222A;
---navbarSM: #2F3640;
---hoverorange: #F46105;
+--navbarBG: #2F3640;
+--navbarSM: #18222A;
+--hoverorange: #ff924f;
 }
 
 *{
@@ -9,6 +9,10 @@
     margin: 0;
     padding: 0;
     font-family: 'Inter', sans-serif;
+}
+
+html{
+    scroll-behavior: smooth;
 }
 
 body{
@@ -158,7 +162,7 @@ body{
 .big-container-center{
     display: flex;
     justify-content: space-between;
-    gap: 100px;
+    gap: 10px;
     align-items: center;
     width: 65%;
     height: auto;
@@ -170,7 +174,7 @@ body{
 }
 
 .navbar-logo>a>img{
-    width: 150px;
+    width: 220px;
 }
 
 .navbar-ul{
@@ -195,6 +199,13 @@ body{
     .big-container-center{
         gap: 0px;
     }
+    .navbar-ul>li>a{
+        font-size: 1.3vw;
+    }
+    .navbar-dropdown>li>a{
+        font-size: 1.3vw;
+    }
+
 }
 
 @media screen and (max-width: 1200px){
@@ -205,12 +216,18 @@ body{
         display: flex;
         position: absolute;
         background-color: var(--navbarBG);
-        top: 190px;
+        top: 185px;
         width: 100%;
         justify-content: center;
         padding-bottom: 20px;
         right: 0px;
         z-index: 999;
+    }
+    .navbar-ul>li>a{
+        font-size: 14pt;
+    }
+    .navbar-dropdown>li>a{
+        font-size: 14pt;
     }
 
     .navbar-ul{
@@ -229,7 +246,7 @@ body{
 @media only screen and (max-width: 1000px){
     .big-container-center{
         width: auto;
-        gap: 490px;
+        gap: 410px;
         transition: smooth;
     }
 
@@ -287,61 +304,115 @@ body{
 /* MAIN SECTION STARTS HERE */
 
 /* Slideshow container */
+
+
+/* Slideshow container */
 .slideshow-container {
-    max-width: 1000px;
+    width: 100%;
     position: relative;
     margin: auto;
+    height: 800px;
+  }
+  
+  /* Hide the images by default */
+  .mySlides {
+    display: none;
   }
   
   /* Next & previous buttons */
-  .prev, .next {
+.prev, .next {
     cursor: pointer;
     position: absolute;
-    top: 50%;
+    top: 20%;
     width: auto;
-    padding: 16px;
     margin-top: -22px;
+    padding: 16px;
     color: white;
+    background-color: var(--navbarSM);
     font-weight: bold;
     font-size: 18px;
     transition: 0.6s ease;
     border-radius: 0 3px 3px 0;
     user-select: none;
-  }
+}
   
   /* Position the "next button" to the right */
-  .next {
+.next {
     right: 0;
     border-radius: 3px 0 0 3px;
-  }
+}
   
   /* On hover, add a black background color with a little bit see-through */
-  .prev:hover, .next:hover {
-    background-color: rgba(0,0,0,0.8);
-  }
-  
+.prev:hover, .next:hover {
+    background-color: rgba(121, 121, 121, 0.8);
+}
+
   /* Caption text */
-  .text {
-    color: #f2f2f2;
-    font-size: 15px;
-    padding: 8px 12px;
-    position: absolute;
-    bottom: 8px;
+.caption-text-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
-    text-align: center;
-  }
-  
-  /* Number text (1/3 etc) */
-  .numbertext {
-    color: #f2f2f2;
-    font-size: 12px;
-    padding: 8px 12px;
+}
+
+.caption-text{
+    display: flex;
+    flex-direction: column;
+    width: 65%;
     position: absolute;
-    top: 0;
-  }
+    bottom: 200px;
+    font-family: 'Roboto', sans-serif;
+
+}
+
+.captiont-text>p{
+    color: black;
+    font-weight: 100;
+}
+
+.caption-text>h1{
+    width: 640px;
+    color: var(--hoverorange);
+    font-size: 45pt;
+}
+
+.caption-text>h2{
+    width: 800px;
+    font-weight: 200;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+.caption-text>a{
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    color: black;
+    align-items: center;
+    width: 200px;
+    height: 50px;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 30px;
+    text-align: center;
+}
+
+.caption-text>a:hover{
+    background-color: var(--hoverorange);
+    color: white;
+    transition: 1s smooth;
+}
   
   /* The dots/bullets/indicators */
-  .dot {
+.dot-container{
+    display: flex;
+    position: relative;
+    gap: 5px;
+    justify-content: center;
+    top: 100px;
+}
+
+.dot {
     cursor: pointer;
     height: 15px;
     width: 15px;
@@ -350,27 +421,96 @@ body{
     border-radius: 50%;
     display: inline-block;
     transition: background-color 0.6s ease;
-  }
+}
   
-  .active, .dot:hover {
+.active, .dot:hover {
     background-color: #717171;
-  }
+}
   
   /* Fading animation */
-  .fade {
+.fade {
     animation-name: fade;
     animation-duration: 1.5s;
-  }
+}
   
-  @keyframes fade {
-    from {opacity: .4} 
+@keyframes fade {
+    from {opacity: .3}
     to {opacity: 1}
-  }
-  
-  /* On smaller screens, decrease text size */
-  @media only screen and (max-width: 300px) {
-    .prev, .next,.text {font-size: 11px}
 }
 
+@media screen and (max-width: 1000px){
+    .sliderimg{
+        min-width: 600px;
+        min-height: 700px;
+    }
+}
 
+@media screen and (max-width: 800px){
+    .caption-text>h1{
+        font-size: 7.2vw;
+        width: auto;
+        height: auto;
+    }
+    .caption-text>h2{
+        font-size: 3vw;
+        width: auto;
+        height: auto;
+    }
+}
 
+@media screen and (max-width: 500px){
+    .caption-text>h1{
+        font-size: 19pt;
+    }
+    .caption-text>h2{
+        font-size: 13pt;
+
+    }
+
+}
+
+/*
+@media screen and (max-width: 1200px){
+    .caption-text{
+        top: 7vw;
+    }
+    .caption-text>h1{
+        font-size: 5vw;
+        width: auto;
+    }
+    .caption-text>p{
+        font-size: 1.3vw;
+    }
+    .caption-text>h2{
+        font-size: 2vw;
+        width: auto;
+    }
+    .caption-text>a{
+        width: 16vw;
+        height: 4.3vw;
+    }
+    .caption-text>a>span{
+    font-size: 1.4vw;
+    }
+}
+
+@media only screen and (max-width: 746px){
+    .dot-container{
+        display: none;
+    }
+    .caption-text>p{
+        font-size: 2.3vw;
+    }
+    .caption-text>h2{
+        margin-top: 15px;
+        margin-bottom: 15px;
+        font-size: 2.8vw;
+    }
+    .caption-text>a{
+        width: 20vw;
+        height: 5vw;
+    }
+    .caption-text>a>span{
+        font-size: 2vw;
+    }
+}
