@@ -440,7 +440,7 @@ body{
 
 @media screen and (max-width: 1000px){
     .sliderimg{
-        min-width: 600px;
+        min-width: 400px;
         min-height: 700px;
     }
 }

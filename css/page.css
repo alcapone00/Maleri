@@ -4,6 +4,9 @@
     --hoverorange: #ff924f;
 }
 
+
+/* MAIN PAGES CONTENT STARTS HERE */
+
 .main-section{
     display: flex;
     justify-content: center;
@@ -17,6 +20,8 @@
 .section-container-center{
     width: 65%;
 }
+
+/* ABOUT US PAGES SECTION */
 
 .aboutus-small-container{
     display: flex;
@@ -70,7 +75,7 @@ border: 1px solid var(--hoverorange);
 .aboutus-second-container{
     display: flex;
     flex-direction: column;
-    margin-top: 70px;
+    margin-top: 80px;
     gap: 10px;
 }
 
@@ -84,7 +89,7 @@ border: 1px solid var(--hoverorange);
 
 
 .aboutus-three-containers{
-    margin-top: 20px;
+    margin-top: 50px;
     display: flex;
     flex-direction: column;
     gap: 30px;
@@ -111,10 +116,10 @@ border: 1px solid var(--hoverorange);
 }
 
 .small-third>h2{
-    font-size: 20pt;
+    font-size: 17pt;
 }
 .small-third>p{
-    font-size: 17pt;
+    font-size: 15pt;
 }
 
 @media only screen and (max-width: 1300px){
@@ -123,9 +128,7 @@ border: 1px solid var(--hoverorange);
     }
     .aboutus-ul{
         width: auto;
-        
     }
-
 }
 
 @media only screen and (max-width: 1000px){
@@ -141,4 +144,230 @@ border: 1px solid var(--hoverorange);
     .secondbucket{
         width: 60vw;
     }
+    .aboutus-text{
+        width: auto;
+    }
+    .aboutus-text>h2{
+        font-size: 18pt;
+        text-align: center;
+    }
 }
+
+/* Float four columns side by side */
+.column {
+    margin-top: 50px;
+    float: left;
+    width: 25%;
+    padding: 0 5px;
+  }
+  
+  .row {margin: 0 -5px;}
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Responsive columns */
+  @media screen and (max-width: 600px) {
+    .column {
+      width: 100%;
+      display: block;
+      margin-bottom: 10px;
+    }
+  }
+  
+  /* Style the counter cards */
+  .card {
+    -webkit-box-shadow: 0 0 5px #000;
+    box-shadow: 0 0 5px #000;
+    padding: 16px;
+    text-align: center;
+    background-color: var(--navbarSM);
+    color: white;
+  }
+  
+  .card>p>i {
+    font-size: 20pt;
+    margin: 15px;
+  }
+
+  .card:hover h3{
+    color: var(--hoverorange);
+  }
+
+
+/* SERVICES PAGE STARTS HERE */
+
+.services-container{
+    height: 800px;
+    margin-top: 60px;
+}
+
+.services-container-second{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.services-container>h1{
+    font-size: 30pt;
+    color: var(--hoverorange);
+    text-align: center;
+    margin: 30px 0px 70px 0px;
+}
+
+.services-painting{
+    border-radius: 10px;
+    position: relative;
+    width: 350px;
+    height: 650px;
+    /* background img */
+    background-image: url('/img/services-maleri.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    -webkit-box-shadow: 0 0 5px #000;
+    box-shadow: 0 0 5px #000;
+}
+
+.services-carpentry{
+    background-color: #18222A;
+    border-radius: 10px;
+    width: 350px;
+    height: 650px;
+
+    /* background img */
+    background-image: url('/img/services-carpentry.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    -webkit-box-shadow: 0 0 5px #000;
+    box-shadow: 0 0 5px #000;
+}
+
+.services-container-second>a{
+    text-decoration: none;
+    text-align: center;
+    font-size: 24pt;
+    color: black;
+    opacity: 0.7;
+    transition: 0.25s;
+
+}
+
+.services-container-second>a:hover{
+    opacity: 1;
+    transition: 0.25s;
+}
+
+.services-div{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: 590px;
+    align-items: center;
+    font-size: 18pt;
+    height: 60px;
+    background-color: var(--navbarBG);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+
+}
+
+.services-div>p{
+    color: white;
+    font-weight: bold;
+}
+
+.services-container-second>a:hover .services-div{
+    position: relative;
+    animation-name: example;
+    animation-duration: 1.3s; 
+    animation-fill-mode: forwards;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+@keyframes example {
+    to {top: 500px;}
+}
+
+@media only screen and (max-width: 1200px){
+    .services-container-second{
+        gap: 50px;
+        flex-wrap: wrap;
+    }
+}
+
+/* TESTIMONIALS CONTAINER STARTS HERE */
+
+.mySlidesFor {display: none;}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.testimonial-container {
+  max-width: 1000px;
+  height: 600px;
+  background-color: grey;
+  position: relative;
+  margin: auto;
+}
+
+/* Caption text */
+.text-testimonial {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dotFor {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.activeFor {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fadeFor {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .text {font-size: 11px}
+}
+
+
+

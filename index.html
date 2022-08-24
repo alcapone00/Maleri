@@ -70,10 +70,10 @@
             <div class="navbar-main" id="navbar-main">
                 <ul class="navbar-ul">
                     <li><a href="#aboutus-container">ABOUT US</a></li>
-                    <div class="navbar-dropdown"><li><a href="#aboutus">SERVICES</a></li>
+                    <div class="navbar-dropdown"><li><a href="#services">SERVICES</a></li>
                         <div class="dropdown-menu">
-                            <li><a href="painting">PAINTING</a></li>
-                            <li><a href="carpentry">CARPENTRY</a></li>
+                            <li><a href="/painting.html">PAINTING</a></li>
+                            <li><a href="/carpentry.html">CARPENTRY</a></li>
                         </div>
                     </div>
                     <li><a href="#aboutus">TESTIMONIALS</a></li>
@@ -163,6 +163,8 @@
                 </div>
             </div>
 
+            <!-- ABOUT US CONTAINER -->
+
             <div class="aboutus-second-container">
                 <h1>Why are we different?</h1>
                 <p>Because we guarantee our set of 3 rules for every project Residental & Commercial</p>
@@ -195,7 +197,95 @@
                     <hr>
                 </div>
 
+                <div class="row">
+                    <div class="column">
+                      <div class="card">
+                        <p><i class="fa fa-user"></i></p>
+                        <h3>11+</h3>
+                        <p>Partners</p>
+                      </div>
+                    </div>
+                  
+                    <div class="column">
+                      <div class="card">
+                        <p><i class="fa fa-check"></i></p>
+                        <h3>55+</h3>
+                        <p>Projects</p>
+                      </div>
+                    </div>
+                  
+                    <div class="column">
+                      <div class="card">
+                        <p><i class="fa fa-smile-o"></i></p>
+                        <h3>100+</h3>
+                        <p>Happy Clients</p>
+                      </div>
+                    </div>
+                  
+                    <div class="column">
+                      <div class="card">
+                        <p><i class="fa fa-coffee"></i></p>
+                        <h3>100+</h3>
+                        <p>Meetings</p>
+                      </div>
+                    </div>
+                  </div>
+
             </div>
+
+            <!-- SERVICES CONTAINER -->
+
+            <div class="services-container" id="services">
+
+                <h1>Our services</h1>
+
+                <div class="services-container-second">
+
+                <a href="/painting.html"><div class="services-painting padding">
+                    <div class="services-div">
+                        <p>Painting</p>
+                    </div>
+                </div></a>
+
+                <a href="/carpentry.html"><div class="services-carpentry padding">
+                    <div class="services-div">
+                        <p>Carpentry</p>
+                    </div>
+                </div></a>
+                </div>
+
+            </div>
+
+            <!-- TESTIMONIAL CONTAINER -->
+
+            <div class="testimonial-container">
+
+                <div class="mySlidesFor fadeFor">
+                  <div class="numbertext">1 / 3</div>
+                  <img src="/img/img1.jpg" style="width:100%">
+                  <div class="text-testimonial">Caption Text</div>
+                </div>
+                
+                <div class="mySlidesFor fadeFor">
+                  <div class="numbertext">2 / 3</div>
+                  <img src="/img/img1.jpg" style="width:100%">
+                  <div class="text-testimonial">Caption Two</div>
+                </div>
+                
+                <div class="mySlidesFor fadeFor">
+                  <div class="numbertext">3 / 3</div>
+                  <img src="/img/img1.jpg" style="width:100%">
+                  <div class="text-testimonial">Caption Three</div>
+                </div>
+                
+                </div>
+                <br>
+                
+                <div style="text-align:center">
+                  <span class="dotFor"></span> 
+                  <span class="dotFor"></span> 
+                  <span class="dotFor"></span> 
+                </div>
 
         </div>
         
@@ -241,8 +331,26 @@ function showSlides(n) {
   dots[slideIndex-1].className += " active";
 }
 
+// TESTIMONIAL SCRIPT
+let slideIndexFor = 0;
+showSlidesFor();
 
-
+function showSlidesFor() {
+  let v;
+  let slidesFor = document.getElementsByClassName("mySlidesFor");
+  let dotsFor = document.getElementsByClassName("dotFor");
+  for (v = 0; v < slidesFor.length; v++) {
+    slidesFor[v].style.display = "none";  
+  }
+  slideIndexFor++;
+  if (slideIndexFor > slidesFor.length) {slideIndexFor = 1}    
+  for (v = 0; v < dotsFor.length; v++) {
+    dotsFor[v].className = dotsFor[v].className.replace(" activeFor", "");
+  }
+  slidesFor[slideIndexFor-1].style.display = "block";  
+  dotsFor[slideIndexFor-1].className += " activeFor";
+  setTimeout(showSlidesFor, 10000); // Change image every 2 seconds
+}
 
 </script>
 
