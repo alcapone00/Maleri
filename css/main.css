@@ -347,7 +347,20 @@ body{
     background-color: rgba(121, 121, 121, 0.8);
 }
 
+.reveal{
+    position: relative;
+    transform: translateY(100px);
+    opacity: 0;
+    transition: 2s all ease;
+}
+
+.reveal.activeanim{
+    transform: translateY(0);
+    opacity: 1;
+}
+
   /* Caption text */
+
 .caption-text-container {
     display: flex;
     justify-content: center;
@@ -374,6 +387,7 @@ body{
     width: 640px;
     color: var(--hoverorange);
     font-size: 45pt;
+
 }
 
 .caption-text>h2{

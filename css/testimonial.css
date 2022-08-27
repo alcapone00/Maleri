@@ -12,6 +12,7 @@
 
 .testim .wrap {
     width: 100%;
+    height: 500px;
     position: relative;
     padding: 40px 0px;
     background-color: var(--navbarBG);
@@ -129,7 +130,7 @@
 .testim .cont div .img img {
     display: block;
     width: 150px;
-    height: 100px;
+    height: 155px;
     margin: auto;
     border-radius: 50%;
 }
